@@ -1,0 +1,60 @@
+
+<!doctype html>
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="description" content="Mergulhando na palavra">
+  <meta name="keywords" content="bíblia">
+  <!-- Android  -->
+  <meta name="theme-color" content="#212121">
+  <meta name="mobile-web-app-capable" content="yes">
+  <!-- iOS -->
+  <meta name="apple-mobile-web-app-title" content="Application Title">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <!-- UC Mobile Browser  -->
+  <meta name="full-screen" content="yes">
+  <meta name="browsermode" content="application">
+  <!-- Tap highlighting  -->
+  <meta name="msapplication-tap-highlight" content="no">
+  <!-- Disable night mode for this page  -->
+  <meta name="nightmode" content="enable/disable">
+  <!-- Orientation  -->
+  <meta name="screen-orientation" content="portrait">
+
+  <title>Mergulhando na Palavra</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/materialize.css">
+  <!-- Manifest.json  -->
+  <link href="/static/manifest.json" rel="manifest">
+</head>
+<body>
+
+<nav>
+  <div class="nav-wrapper grey darken-4">
+    <a href="#" class="brand-logo"></a>
+  </div>
+</nav>
+  {% block content %}{% endblock %}
+
+
+  <div class="fixed-action-btn">
+      <a class="btn-floating btn-large blue-grey darken-4">
+        <i class="large material-icons">info</i>
+      </a>
+      <ul>
+        <li><a class="btn-floating  indigo darken-1" href=" {{ url_for('home.home') }}"><i class="material-icons">home</i></a></li>
+        <li><a class="btn-floating light-blue darken-2"  href=" {{ url_for('home.about') }}"><i class="material-icons">public</i></a></li>
+      </ul>
+  </div>
+
+</body>
+<script src="static/js/jquery.min.js"></script>
+<script src="static/js/materialize.js"></script>
+<script>
+$(document).ready(function(){
+    $('.fixed-action-btn').floatingActionButton();
+  });
+</script>

@@ -1,1 +1,13 @@
-# Simples Flask App to Manage Students
+# Simple Flask App to manage Students
+
+
+## View/Routes
+
+/home
+
+/thankyou
+
+
+## Entry points
+
+/user

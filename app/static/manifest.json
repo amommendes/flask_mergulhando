@@ -1,0 +1,55 @@
+{
+    "name": "Mergulhando na Palavra",
+    "short_name": "Mergulhando",
+    "icons": [{
+      "src": "images/logo-preto.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+     "src": "images/logo-preto.png",
+     "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+     "src": "images/logo-preto.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+        "src": "images/logo-preto.png",
+        "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+        "src": "images/logo-preto.png",
+        "sizes": "168x168",
+      "type": "image/png"
+    },
+    {
+        "src": "images/logo-preto.png",
+        "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+        "src": "images/logo-preto.png",
+        "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+        "src": "images/logo-preto.png",
+        "sizes": "512x512",
+      "type": "image/png"
+    }],
+    "gcm_sender_id": "",
+    "gcm_user_visible_only": true,
+    "start_url": "/home",
+    "permissions": [
+      "gcm"
+    ],
+    "scope": "home",
+    "orientation": "portrait",
+    "display": "standalone",
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff"
+  }
