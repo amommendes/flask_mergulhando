@@ -14,33 +14,33 @@
       </div>
     </div>
     <div class="row">
-        <form class="col s12" method="POST">
+        <form class="col s12" method="POST" >
           <div class="row">
             <div class="input-field col s12">
-              <input id="email" type="email" class="validate">
+              <input id="email" name="email" type="email" required class="validate">
               <label for="email">Email</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <input id="first_name" type="text" class="validate">
+              <input id="name" name="name" required  type="text" class="validate">
               <label for="first_name">Nome</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <input id="telefone" placeholder="(00) 99999-9999" type="text" class="validate">
+              <input id="phone" name="phone" required placeholder="(00) 99999-9999" type="text" class="validate">
               <label for="telefone">Telefone</label>
             </div>
           </div>
           <div class="row">
               <div class="input-field col s12">
-                <input id="celula" type="text" class="validate">
+                <input id="cell" name="cell" required  type="text" class="validate">
                 <label for="celula">Célula</label>
               </div>
             </div>
     
-          <input class="btn-large light-blue darken-4" type="submit" value="Cadastre-se">
+          <button class="btn-large light-blue darken-4" onclick="postStudent();" >Cadastre-se</button>
         </form>
       </div>
    
