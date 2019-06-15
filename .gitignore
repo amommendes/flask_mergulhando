@@ -3,7 +3,7 @@
 bin/*
 lib/*
 include/*
-
+venv/*
 
 *.pyc
 app/__pycache__/
@@ -16,3 +16,4 @@ app/htmlcov/
 *.egg-info/
 flask_mergulhando.code-workspace
 var/*
+.vscode/settings.json

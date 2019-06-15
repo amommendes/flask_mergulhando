@@ -114,7 +114,7 @@ RUN set -ex; \
 	backupPackage='mariadb-backup'; \
 	apt-get update; \
 	apt-get install -y \
-		"mariadb-server=$MARIADB_VERSION" \
+		"mariadb-server" \
 # percona-xtrabackup/mariadb-backup is installed at the same time so that `mysql-common` is only installed once from just mariadb repos
 		$backupPackage \
 		socat \

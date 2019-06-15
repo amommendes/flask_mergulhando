@@ -13,7 +13,7 @@ class Student(db.Model):
 
 class Class(db.Model):
         __tablename__  = 'classes'
-        id = db.Column(db.Integer, primary_key=True, auto_increment=True)
+        id = db.Column(db.Integer, primary_key=True,)
         date = db.Column(db.DateTime, nullable=False)
         student_id = db.Column(db.String(60), db.ForeignKey('students.email'),
         nullable=False)
