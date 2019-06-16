@@ -1,5 +1,5 @@
 import functools
-
+from flask_restful import Resource, Api
 from flask import (
     Blueprint, flash, g, redirect, render_template, request, session, url_for
 )
@@ -9,19 +9,10 @@ import app.models.orm as orm
 
 bp = Blueprint('auth', __name__, url_prefix='/')
 
-@bp.route('/register', methods=('GET', 'POST'))
+@bp.route('/register', methods=['GET'])
 def register():
-    errors = {}
-    if request.method == 'POST':
-        data = {}
-        schema = ['email', 'name', 'phone', 'cell']
-        for field in schema:
-            try:
-                data[field] = request.form[field]
-            except Exception as error:
-                error[field]="Not validated"
-    
     return render_template('auth/register.html')
+
 
 @bp.route('/login', methods=('GET', 'POST'))
 def login():
