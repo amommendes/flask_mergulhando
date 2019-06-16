@@ -43,13 +43,23 @@
         <div class="btn-large light-blue darken-4" onclick="postStudent();">Cadastre-se</div>
 
       </div>
-   
+       <!-- Modal Structure -->
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <h4>Registro Mergulhando</h4>
+          <p id="conteudo-modal-registro"></p>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-red btn-flat">Fechar</a>
+        </div>
+      </div>
 </div>
   <script src="static/js/jquery.min.js" ></script>
 
    <script>
       $(document).ready(function() {
-          //M.updateTextFields();
+          M.updateTextFields();
+          $('.modal').modal();
       });
   </script>
 

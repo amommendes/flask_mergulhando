@@ -17,3 +17,5 @@ app/htmlcov/
 flask_mergulhando.code-workspace
 var/*
 .vscode/settings.json
+app/utils/secret/client_secret.json
+app/utils/secret/token.json

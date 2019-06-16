@@ -19,7 +19,19 @@ function postStudent(){
             {"url":"/user", 
              "data": data,
              "success": function(response){
-                 console.log(response)
+                var modal_conteudo = $("#conteudo-modal-registro")
+                if (response.result && response.result == "success"){
+                    modal_conteudo.text("Usuário "+email+ " cadastrado com sucesso. Pode registrar sua presença com e-mail: " + email)
+                } else if (response.result && response.result == "duplicated"){
+                    modal_conteudo.text(name + 
+                        ", você já esta cadastrado em nossa base de dados. Pode registrar sua presença com  e-mail " + 
+                        email)
+                } else {
+                    modal_conteudo.text("Erro ao cadastrar o usuário "+email+ ". Por favor, consultar alguém do Ministério de Ensino." +
+                    " Se possível informe o seguinte erro: " + response.result)
+                }
+                $('.modal').modal('open');
+                console.log(response)
              }
         });
     }
@@ -33,3 +45,9 @@ function clearInput(input){
     $("#"+input).val("")
 }
 
+function fillTestData(){
+    $("#email").val("amommendes@mergulhando.com.br"+Math.round(Math.random()*100));
+    $("#name").val("Amom Mendes"+Math.ceil(Math.random()*100))
+    $("#phone").val("11-972291656"+Math.ceil(Math.random()*100))
+    $("#cell").val("Ceret"+Math.ceil(Math.random()*100))
+}
