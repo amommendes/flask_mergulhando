@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
+  <div class="container">
     <div class="row">
       <div class="col s12">
         <h3>
@@ -14,22 +14,36 @@
       </div>
     </div>
     <div class="row">
-        <form class="col s12" method="POST" action="/login">
+        <form class="col s12">
           <div class="row">
             <div class="input-field col s12">
               <input id="email" name="email" type="email" class="validate">
               <label for="email">Email</label>
             </div>
           </div>
-          <input class="btn-large light-blue darken-4" type="submit"  value="Registrar Presença">
         </form>
+        <div class="btn-large light-blue darken-4" onclick="checkPresence();">Registrar Presença</div>
+
       </div>
-   
-</div>
-  <script src="static/js/jquery.min.js" ></script>
+
+      <!-- Modal -->
+      <div id="modal-presenca" class="modal">
+        <div class="modal-content">
+          <h4>Mergulhando na Palavra</h4>
+          <p id="conteudo-modal-presenca"></p>
+        </div>
+        <div class="modal-footer">
+          <a href="/home" class="modal-close waves-effect waves-red btn-flat" >Fechar</a>
+        </div>
+      </div>
+
+    </div>
+ <script src="static/js/jquery.min.js" ></script>
 
    <script>
       $(document).ready(function() {
-          M.updateTextFields();});
+          M.updateTextFields();
+          $('.modal').modal();
+      });
   </script>
 {% endblock %}

@@ -14,25 +14,8 @@ def register():
     return render_template('auth/register.html')
 
 
-@bp.route('/login', methods=('GET', 'POST'))
+@bp.route('/login', methods=['GET'])
 def login():
-    if request.method == 'POST':
-        print(request.form)
-        email = request.form['email']
-        db = get_db()
-        error = None
-        '''
-        if user is None:
-            error = 'Incorrect username.'
-        elif not check_password_hash(user['password'], password):
-            error = 'Incorrect password.'
-
-        if error is None:
-            session.clear()
-            session['user_id'] = user['id']
-            return redirect(url_for('index'))
-        '''
-        flash(error)
     return render_template('auth/login.html')
 
 @bp.before_app_request

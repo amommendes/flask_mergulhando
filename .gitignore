@@ -19,3 +19,4 @@ var/*
 .vscode/settings.json
 app/utils/secret/client_secret.json
 app/utils/secret/token.json
+XDG_CACHE_HOME/*

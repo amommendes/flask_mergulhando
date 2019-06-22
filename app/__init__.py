@@ -32,13 +32,14 @@ def create_app(test_config=None):
     app.app_context().push()
     db.init_app(app)
     db.engine.execute("create database if not exists mergulhando;")
-    #db.create_all()
+    db.create_all()
     
     from . import auth
     app.register_blueprint(auth.bp)
 
     from . import user_api
     api.add_resource(user_api.RegisterUser, "/user")
+    api.add_resource(user_api.RegisterPresence, "/class/register")
 
     from . import home
     app.register_blueprint(home.bp)

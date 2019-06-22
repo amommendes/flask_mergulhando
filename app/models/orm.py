@@ -20,11 +20,14 @@ class Student(db.Model):
 class Class(db.Model):
         __tablename__  = 'classes'
         id = db.Column(db.Integer, primary_key=True,)
-        date = db.Column(db.DateTime, nullable=False)
+        date = db.Column(db.Date, nullable=False)
         student_id = db.Column(db.String(60), db.ForeignKey('students.email'),
         nullable=False)
         student = db.relationship('Student',
                 backref=db.backref('students', lazy=True))
+        def __init__(self, date, student_id):
+                self.date = date
+                self.student_id = student_id
 
 
         
