@@ -1,0 +1,29 @@
+version: '2'
+
+services:
+  mergulhando_db:
+    image: mergulhando_db
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=mergulhando
+      - MYSQL_PASSWORD=changeme
+      - MYSQL_DATABASE=mergulhando
+      - MYSQL_ROOT_HOST=%
+    networks:
+      - mergulhando
+
+  app_mergulhando:
+    image: app_mergulhando
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mergulhando_db
+    networks:
+      - mergulhando
+    command: ["./wait-for-mysql.sh", "mergulhando_db", "--", "sh", "/app/start_app.sh"]
+
+networks:
+  mergulhando:
+    driver: bridge

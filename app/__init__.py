@@ -5,10 +5,11 @@ from flask_restful import Resource, Api
 
 def create_app(test_config=None):
     # create and configure the app
-    app = Flask(__name__, instance_relative_config=True)
+    app = Flask(__name__, instance_relative_config=False)
+    app.config.from_pyfile("config.py")
     app.config.from_mapping(
         SECRET_KEY='dev',
-        SQLALCHEMY_DATABASE_URI="mysql+pymysql://root:root@127.0.0.1:3306/mergulhando",
+        SQLALCHEMY_DATABASE_URI="mysql+pymysql://mergulhando:{}@mergulhando_db:3306/mergulhando".format(app.config["MERGULHANDO_KEY"]),
         SQLALCHEMY_ECHO=True,
         SQLALCHEMY_TRACK_MODIFICATIONS=False
     )
