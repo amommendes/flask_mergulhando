@@ -13,11 +13,12 @@ services:
       - MYSQL_ROOT_HOST=%
     networks:
       - mergulhando
-
+    volumes:
+      - /data:/var/lib/mysql 
   app_mergulhando:
     image: app_mergulhando
     ports:
-      - "5000:5000"
+      - "80:80"
     depends_on:
       - mergulhando_db
     networks:

@@ -13,9 +13,9 @@ error=" ${C_RED} [ERROR] ${C_WHITE}"
 echo $(date "+%Y-%m-%d %H:%M:%S") ${info}Starting Mergulhando Application
 cd docker
 echo $(date "+%Y-%m-%d %H:%M:%S") ${info}Stopping Services
-docker-compose stop
+sudo docker-compose down 
 echo $(date "+%Y-%m-%d %H:%M:%S") ${info} Starting Services:
-docker-compose up -d
+sudo docker-compose up -d
 
 rc=$?
 
